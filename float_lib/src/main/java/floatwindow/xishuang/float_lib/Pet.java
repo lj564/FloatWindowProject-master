@@ -8,6 +8,7 @@ public class Pet {
    private static String petName;
    private static ArrayList<String> petMotion;
    private static Map<String,String> petPath;
+   private static String petToPath;
    Pet(String petName,ArrayList<String> petMotion,Map<String,String> petPath){
        this.petName=petName;
        this.petMotion=petMotion;
@@ -34,8 +35,11 @@ public class Pet {
         Pet.petPath = petPath;
     }
 
-    public static Map<String, String> getPetPath() {
-        return petPath;
+    public static Map<String,String> getPetPath(){return petPath;}
+
+    public static String getPetMotionPath(String petMotionStr) {
+       petToPath=petPath.get(petMotionStr);
+       return petToPath;
     }
 
 }
